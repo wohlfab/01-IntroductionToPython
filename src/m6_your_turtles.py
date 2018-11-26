@@ -2,15 +2,15 @@
 Your chance to explore Loops and Turtles!
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
-         Aaron Wilkin, their colleagues, and PUT_YOUR_NAME_HERE.
+         Aaron Wilkin, their colleagues, and Brandon Wohlfarth.
 """
 ########################################################################
-# TODO: 1.
+# DONE: 1.
 #   On Line 5 above, replace  PUT_YOUR_NAME_HERE  with your own name.
 ########################################################################
 
 ########################################################################
-# TODO: 2.
+# DONE: 2.
 #   You should have RUN the  m5e_loopy_turtles  module and READ its code.
 #   (Do so now if you have not already done so.)
 #
@@ -28,3 +28,42 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 #   Don't forget to COMMIT-and-PUSH when you are done with this module.
 #
 ########################################################################
+import rosegraphics as rg
+
+window = rg.TurtleWindow()
+
+
+turtle = rg.SimpleTurtle('turtle')
+turtle.pen = rg.Pen('red', 1)
+turtle.speed = 15
+
+size = 200
+
+
+for k in range(10):
+
+
+    turtle.draw_circle(size)
+    turtle.pen_up()
+    turtle.right(45)
+    turtle.forward(20)
+    turtle.left(30)
+    turtle.pen_down()
+    size = size - 15
+
+tracer = rg.SimpleTurtle()
+tracer.pen = rg.Pen('green', 4)
+tracer.pen_up()
+
+tracer.forward(5)
+tracer.right(90)
+tracer.forward(180)
+tracer.speed = 20
+
+tracer.pen_down()
+for k in range(80):
+    tracer.right(15)
+    tracer.forward(k)
+    tracer.right(50)
+
+window.close_on_mouse_click()
